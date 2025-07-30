@@ -6,7 +6,8 @@ function handleLogin(event) {
     fetch('https://music-showcase-server.onrender.com/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username, password }),
+        credentials: 'include'
     })
     .then(async (res) => {
         if (!res.ok) {
