@@ -3,8 +3,11 @@ function toggleDropdown() {
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
 
-fetch("topbar.html")
-    .then(res => res.text())
-    .then(html => {
-        document.getElementById("topbar-placeholder").innerHTML = html;
-});
+const repoName = "Music-Showcase";
+const basePath = window.location.hostname.includes("github.io") ? `/${repoName}/` : "./";
+
+fetch(`${basePath}topbar.html`)
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("topbar-placeholder").innerHTML = html;
+  });
