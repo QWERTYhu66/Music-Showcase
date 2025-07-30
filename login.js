@@ -10,17 +10,15 @@ function handleLogin(event) {
         credentials: 'include'
     })
     .then(async (res) => {
-        if (!res.ok) {
-            const errorText = await res.text();
-            throw new Error(`Server responded with status ${res.status}: ${errorText}`);
-        }
-        return res.json();
-    })
-    .then(data => {
-        if (data.success) {
+        let data = { success: false, message: 'Invalid server response' };
+        try {
+            data = await res.json();
+        } catch {}
+
+        if (res.ok && data.success) {
             window.location.href = './member.html';
         } else {
-            alert(`Access Denied: ${data.message}`);
+            alert(`Access Denied: ${data.message || 'Wrong username or password'}`);
         }
     })
     .catch(err => alert(`Error contacting server: ${err.message}`));
