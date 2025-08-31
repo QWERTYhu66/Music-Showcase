@@ -1,9 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
+        <meta charset="utf-8">
+        <title>2024 Highlights</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="highlights.css">
+        <link rel="icon" href="images/logo.png" type="image/x-icon">
     </head>
     <body>
-
+        <div class="top-bar">
+            <div class="branding">
+                <img src="../images/logo.png" alt="Music Showcase Logo">
+                <span class="subtitle">By A Group of Friends and Families</span>
+            </div>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../login.html">Login</a>
+                <a href="../events.html">Events</a>
+                <div class="dropdown">
+                    <button onclick="toggleDropdown()">Past Events <span class="arrow"></span></button>
+                    <div class="dropdown-content">
+                        <a href="./2024-highlights.html">2024 Highlights</a>
+                    </div>
+                </div>
+                <a href="../participate.html">Participate</a>
+                <a href="../about-us.html">About Us</a>
+            </nav>
+        </div>
+        <section class="hero">
+            <h1>2024 Highlights</h1>
+        </section>
+        <div class="content">
+            <div class="image-row">
+                <img src="../images/poster_2024.jpg" alt="Showcase Image">
+                <img src="../images/program_2024.jpg" alt="2024 Highlights">
+            </div>
+            <div class="image-row">
+                <div class="carousel">
+                    <div class="carousel-images">
+                        <div class="slide" style="background-image: url('image1.jpg');"></div>
+                        <div class="slide" style="background-image: url('image2.jpg');"></div>
+                        <div class="slide" style="background-image: url('image3.jpg');"></div>
+                    </div>
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+                <div class="video-section">
+                    <h2>Event Video</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+            </div>
+        </div>
+        <script src="highlights.js"></script>
     </body>
 </html>
