@@ -95,7 +95,7 @@ let autoplayTimer = 0;
 function startAutoplay() {
   if (prefersReducedMotion) return;
   if (!slides.length) return;
-  autoplayTimer = window.setInterval(() => showSlide(index + 1), 4500);
+  autoplayTimer = window.setInterval(() => showSlide(index + 1), 3000);
 }
 function stopAutoplay() {
   if (autoplayTimer) window.clearInterval(autoplayTimer);

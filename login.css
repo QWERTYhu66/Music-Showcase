@@ -116,6 +116,8 @@ h2 {
     border-radius: 14px;
     overflow: hidden;
     opacity: 0;
+    left: 0;
+    right: 0;
     transform: translateY(-6px) scale(.98);
     pointer-events: none;
     transition: opacity .18s ease, transform .18s ease;
@@ -137,7 +139,6 @@ h2 {
     position: relative;
     display: inline-block;
     padding: 10px 0;
-    font-size: 18px;
 }
 
 .dropdown.open .dropdown-content{
@@ -147,9 +148,39 @@ h2 {
 }
 
 .dropdown button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    padding: 0 8px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    line-height: 1;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    opacity: .92;
+}
+
+.dropdown button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform .22s ease;
+    border-radius: 2px;
+}
+
+.dropdown.open button::after,
+.dropdown button:hover::after,
+.dropdown.open button::after {
+    transform: scaleX(1);
 }
 
 .dropdown .arrow {
